@@ -1,0 +1,18 @@
+
+
+{% for i in pro %}
+{{i.project_assigned_to}}<br>
+{{i.id}}<br> 
+{%endfor%}
+<form method="POST" action="">
+            {% csrf_token %}
+            <div class="mb-3">
+                  <label for="project_name">project_name</label>
+                  
+                  {{specific_user}} {{specific_user.user.id}}
+                  <input type="text" class="form-control" id="project_assigned_to" name="project_assigned_to" value="{{i.project_assigned_to}}" >
+                  
+                </div>
+            <input type="hidden" name="id" id="id" value="{{i.id}}">
+            <button type="submit" class="btn btn-primary">Click To Hire Me</button>
+</form> 

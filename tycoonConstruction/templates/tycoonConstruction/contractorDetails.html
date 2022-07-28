@@ -1,0 +1,53 @@
+{% extends 'base2.html' %}{% load static from static %} {% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contractor Details</title>
+</head>
+<body>
+    <div class="card mb-4">
+        <div class="card-header">
+            <i class="fas fa-table me-1"></i>
+            Vendor Details
+        </div>
+        <div class="card-body">
+            <table id="datatablesSimple">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Contact</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Contact</th>
+                        <th>Description</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    {% for cons in con  %}
+                    <tr>
+                        <td>{{cons.user.username}}</td>
+                        <td>{{cons.contractor_email}}</td>
+                        <td>{{cons.contractor_address}}</td>
+                        <td>+92 {{cons.contractor_contact}}</td>
+                        <td>{{cons.contractor_description}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>
+{% endblock content %}
